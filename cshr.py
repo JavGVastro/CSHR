@@ -23,10 +23,10 @@ sns.pairplot(df,
              diag_kws=dict(bins=20),
             )
 
-#mask=df['sigHalpha'] < df['sigHalpha'].mean()-4*df['sigHalpha'].std()
+m=df['sigHalpha'] < df['sigHalpha'].mean()+4*df['sigHalpha'].std()
 
 
-sns.pairplot(df,
+sns.pairplot(df[m],
              vars=["RVHalpha", "sigHalpha", "NormHalpha"],
              diag_kind='hist',
              plot_kws=dict(alpha=0.3, s=10, edgecolor='none', color="blue"),
